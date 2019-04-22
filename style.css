@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .app {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .time-select,
+  .sound-picker {
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+  }
+
+
+  .time-select button,
+  .sound-picker button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    /* this removes the background of the button */
+    background: none;
+    font-size: 20px;
+    border-radius: 5px;
+    /* so it looks clickable mouse chnages when hover over it*/
+    cursor: pointer;
+    border: 2px solid white;
+    /* This allows a smothe trasition when button chnages hen mouse hovers over it */
+    transition: all 0.5s ease;
+  }
+  
+  .sound-picker button {
+    border: none;
+    height: 120px;
+    width: 120px;
+    padding: 30px;
+    border-radius: 50%;
+  }
+
+  /* This gets the first button of the sound-picker class by using nth-child(1) */
+  .sound-picker button:nth-child(1) {
+    background: #4972a1;
+  }
+  /* This now gets the second button using the same method */
+  .sound-picker button:nth-child(2) {
+    background: #a14f49;
+  }
+  .sound-picker button img {
+    height: 100%;
+  }
+  
+  /* This changes the button when you hover over it */
+  .time-select button:hover {
+    background: white;
+    color: black;
+  }
+ 
+  
+  .player-container {
+    position: relative;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+  }
+ 
+  /* This is moving the blue cicle around the play to the middle */
+  .player-container svg {
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    /* positioning it in the middle */
+    transform: translate(-50%, -50%) rotate(-90deg);
+    /* This is so you can click the play button and not the cirle (no events happen) */
+    pointer-events: none;
+  }
+  .player-container svg circle {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Moving the 0:0 and stylin */
+  .time-display {
+    color: white;
+    position: absolute;
+    font-size: 50px;
+    bottom: 10%;
+  }
+  
+
+
+  video {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    /* The z index is moving it back as in a 3-D scale this is so you can see all the other buttons*/
+    z-index: -10;
+  }
