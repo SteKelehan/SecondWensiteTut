@@ -91,6 +91,10 @@
     transition: all 0.2s ease-in-out;
   }
 
+  .play {
+      cursor: pointer;
+  }
+
   /* Moving the 0:0 and stylin */
   .time-display {
     color: white;
